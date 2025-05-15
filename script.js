@@ -62,7 +62,7 @@ const postsAPI = "https://jsonplaceholder.typicode.com/posts";
     function showUserModal(userId) {
       const user = getUserById(userId);
       const details = document.getElementById("userDetails");
-
+    
       details.innerHTML = `
         <p><strong>Name:</strong> ${user.name}</p>
         <p><strong>Username:</strong> ${user.username}</p>
@@ -70,9 +70,11 @@ const postsAPI = "https://jsonplaceholder.typicode.com/posts";
         <p><strong>Phone:</strong> ${user.phone}</p>
         <p><strong>Website:</strong> <a href="http://${user.website}" target="_blank">${user.website}</a></p>
         <p><strong>Company:</strong> ${user.company.name}</p>
+        <p><strong>Catchphrase:</strong> <em>"${user.company.catchPhrase}"</em></p>
+        <p><strong>BS:</strong> ${user.company.bs}</p>
         <p><strong>Address:</strong> ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
       `;
-
+    
       new bootstrap.Modal(document.getElementById("userModal")).show();
     }
 
